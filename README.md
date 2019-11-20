@@ -16,7 +16,7 @@ Use `js/reducer.js` to follow along. Open `index.html` to try out the code.
 
 Let's look at the code that we wrote in the last section.
 
-```javascript
+``javascript
 let state;
 
 function reducer(state = { count: 0 }, action) {
