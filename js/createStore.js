@@ -1,4 +1,6 @@
-let state;
+function() {
+  let state;
+}
 
 function reducer(state = { count: 0 }, action) {
   switch (action.type) {
