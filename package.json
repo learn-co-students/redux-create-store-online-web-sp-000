@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/learn-co-curriculum/redux-create-store/issues"
   },
-  "homepage": "https://github.com/learn-co-curriculum/redux-create-store#readme"
+  "homepage": "https://github.com/learn-co-curriculum/redux-create-store#readme",
+  "dependencies": {
+    "redux": "^4.0.5"
+  }
 }
