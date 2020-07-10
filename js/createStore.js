@@ -1,4 +1,16 @@
-let state;
+function createStore() {
+  let state; 
+
+  function dispatch(action) {
+      state = reducer(state, action);
+      render();
+  };
+
+  return {dispatch};
+}
+
+let store = createStore();
+store.dispatch({type: '@@INIT'});
 
 function reducer(state = { count: 0 }, action) {
   switch (action.type) {
@@ -8,11 +20,6 @@ function reducer(state = { count: 0 }, action) {
     default:
       return state;
   }
-};
-
-function dispatch(action){
-  state = reducer(state, action);
-  render();
 };
 
 function render() {
