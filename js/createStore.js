@@ -1,3 +1,6 @@
+//With this set up, we've got a fully functional store, that encapsulates our state and provides a controlled way to write (dispatch) and retrieve (getState) information.
+
+
 function createStore(reducer) { //wrapping our state in a function
   let state; //accessible to dispatch 
  
