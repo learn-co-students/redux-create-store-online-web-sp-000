@@ -1,3 +1,4 @@
+
 function createStore(reducer) {
   let state;
 
@@ -27,10 +28,14 @@ function reducer(state = { count: 0 }, action) {
 }
 
 
+
 function render() {
   let container = document.getElementById('container');
   container.textContent = store.getState().count;
 };
+
+
+
 
 let store = createStore(reducer) // createStore takes the reducer reducer as an argument
 store.dispatch({ type: '@@INIT' });
