@@ -1,4 +1,4 @@
-# Refactoring Our Code Into A Library
+## Refactoring Our Code Into A Library
 
 ## Objectives
 
