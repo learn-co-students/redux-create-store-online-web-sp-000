@@ -33,6 +33,7 @@ function render() {
 
 let store = createStore(reducer) // createStore takes the reducer as an argument
 store.dispatch({ type: '@@INIT' });
+
 let button = document.getElementById('button');
 
 button.addEventListener('click', () => {
