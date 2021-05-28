@@ -1,4 +1,17 @@
-let state;
+function createStore(reducer) { // not a grocery store; state container that holds application's state
+  let state;
+
+  function dispatch(action){
+    state = reducer(state, action);
+    render();
+  }
+
+  function getState() {
+    return state
+  }
+
+  return { dispatch, getState }
+}
 
 function reducer(state = { count: 0 }, action) {
   switch (action.type) {
@@ -10,19 +23,16 @@ function reducer(state = { count: 0 }, action) {
   }
 };
 
-function dispatch(action){
-  state = reducer(state, action);
-  render();
-};
-
 function render() {
   let container = document.getElementById('container');
-  container.textContent = state.count;
+  container.textContent = store.getState().count;
 };
 
-dispatch({ type: '@@INIT' })
+let store = createStore(reducer) // this store is basically the state
+store.dispatch({ type: '@@INIT' }) // access the dispatch method within the state storage container
+
 let button = document.getElementById('button');
 
 button.addEventListener('click', function() {
-    dispatch({ type: 'INCREASE_COUNT' });
+    store.dispatch({ type: 'INCREASE_COUNT' }); // don't need 'store.getState() bc dispatch is a closure and already has access to state from its declaration at the beginning of createStore()
 })
