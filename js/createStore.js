@@ -23,6 +23,10 @@ function render() {
 dispatch({ type: '@@INIT' })
 let button = document.getElementById('button');
 
+
+
+let x  = "I took all the notes guys dw"
+
 button.addEventListener('click', function() {
     dispatch({ type: 'INCREASE_COUNT' });
 })
